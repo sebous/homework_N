@@ -5,7 +5,8 @@ import { TodoDetail } from "./components/TodoDetail";
 import { useApi } from "./lib/useApi";
 
 export function Routes() {
-  const { loading } = useApi();
+  // this should be ideally called in component that handles initial data fetch and wraps routes
+  useApi();
 
   return (
     <Router>

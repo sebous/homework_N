@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { StateContext } from "../context/StateProvider";
+import { Spinner } from "./Spinner";
 
 interface TodoProps {
   todoId: string;
@@ -10,7 +11,7 @@ export const TodoDetail: React.FC<TodoProps> = ({ todoId }) => {
 
   const todo = todos.find((t) => t.id === Number(todoId));
 
-  if (!todo) return <h3>loading</h3>;
+  if (!todo) return <Spinner />;
 
   return (
     <div className="container">

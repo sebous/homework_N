@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Spinner } from "./components/Spinner";
 import { Todo } from "./components/Todo";
 import { StateContext } from "./context/StateProvider";
 
@@ -6,11 +7,7 @@ function App() {
   const { todos } = useContext(StateContext);
 
   if (todos.length === 0) {
-    return (
-      <div>
-        <h3>loading...</h3>
-      </div>
-    );
+    return <Spinner />;
   }
 
   return (
